@@ -37,8 +37,12 @@ jobs:
       - name: Hata raporunu göster
         if: failure()
         run: |
-          echo "===== OLASI HATALAR ====="
-          grep -i -E "error|exception|traceback|failed|fatal" build.log | tail -100 || true
+          
+                - name: Hata raporunu göster
+        if: failure()
+       run: |
+          echo "===== GERCEK HATALAR ====="
+          grep -n -i -E "fatal error:|error:|undefined reference|traceback|exception:|no module named|no such file or directory" build.log | tail -100 || true
 
       - name: Build logunu yükle
         if: always()
