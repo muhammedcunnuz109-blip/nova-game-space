@@ -16,6 +16,7 @@ fullscreen = 0
 
 android.api = 35
 android.minapi = 23
+android.accept_sdk_license = True
 
 android.permissions = android.permission.QUERY_ALL_PACKAGES
 
